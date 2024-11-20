@@ -1,0 +1,669 @@
+
+strong {
+    text-transform: uppercase;
+}
+
+/* Estilo general del cuerpo de la página */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Elimina scroll horizontal no deseado */
+}
+
+/* Encabezado principal con diseño futurista */
+header {
+    background: linear-gradient(135deg, #001f3d 0%, #0077b6 100%);
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid #005f73;
+}
+
+/* Contenido del encabezado */
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Títulos principales con sombra para un toque futurista */
+h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Subtítulos */
+h2 {
+    color: #0077b6;
+    font-weight: 700;
+    margin-top: 0;
+    font-size: 1.6rem;
+    text-transform: uppercase;  
+}
+
+/* Barra de navegación estilo futurista */
+nav {
+    background-color: #ffffff;
+    padding: 1.5rem 0;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #003366;
+    overflow-x: auto; /* Permite el desplazamiento horizontal */
+    white-space: nowrap; /* Evita el salto de línea */
+}
+
+/* Contenedor de la lista de navegación */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+    display: flex;
+    justify-content: flex-start; /* Los elementos están alineados desde la izquierda */
+}
+
+/* Estilos para los elementos de la lista */
+nav ul li {
+    flex-shrink: 0; /* Evita que los elementos se encojan */
+    margin-right: 20px; /* Espaciado entre los elementos */
+}
+
+/* Estilo para los enlaces */
+nav ul li a {
+    text-decoration: none;
+    color: #003366;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 12px 20px; /* Ajusta el tamaño de los enlaces */
+    border-radius: 5px;
+    text-transform: uppercase;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #003366;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para el scrollbar (sin mostrar hasta que sea necesario) */
+nav::-webkit-scrollbar {
+    height: 8px; /* Tamaño del scrollbar */
+}
+
+nav::-webkit-scrollbar-thumb {
+    background-color: #003366;
+    border-radius: 10px;
+}
+
+nav::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Animación de rebote para indicar desplazamiento lateral al cargar */
+@keyframes bounceIn {
+    0% {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(10px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+nav ul {
+    animation: bounceIn 1s ease-out;
+}
+
+/* Estilos para el contenido principal */
+main {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 2rem 20px;
+    display: flex;
+    overflow-x: auto; /* Para mostrar las secciones lateralmente */
+    position: relative;
+    width: 100%;
+}
+
+/* Contenedor de las secciones, alineadas en eje X */
+.section-container {
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* Estilos para cada sección */
+section {
+    min-width: 80%;
+    background-color: #fff;
+    padding: 2.5rem;
+    margin-right: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: none;
+}
+
+section.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+/* Animación para las secciones activas */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Listas con estilo limpio y moderno */
+ul, ol {
+    padding-left: 20px;
+    margin-top: 1rem;
+    padding: 10px;
+}
+
+/* Estilo para el contenedor */
+dl {
+    background-color: #ffffff; /* Fondo blanco limpio */
+    padding: 20px;
+    border-left: 4px solid #003366; /* Línea vertical a la izquierda */
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    color: #444; /* Color de texto neutro */
+}
+
+/* Estilo para los términos de las listas */
+dt {
+    font-weight: bold;
+    color: #003366;
+    font-size: 1.1rem;
+    margin-top: 0.8rem;
+    text-transform: uppercase; /* Hacer mayúscula toda la palabra */
+}
+
+/* Estilo para las descripciones */
+dd {
+    margin-left: 20px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #666;
+    text-align: left;
+}
+
+/* Añadir un separador para cada elemento */
+dt::before {
+    content: "—"; /* Guion largo como separador */
+    color: #fca311;
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+/* Resaltar el término al pasar el cursor */
+dt:hover {
+    color: #fca311; 
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Resaltar el bloque al pasar el cursor */
+dl:hover {
+    border-left: 4px solid #fca311; /* Cambia la línea de la izquierda */
+    background-color: #f9f9f9; /* Fondo gris claro */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+
+/* Estilos para los gráficos */
+#marketChart {
+    max-width: 100%;
+    height: 400px;
+    margin-top: 2rem;
+}
+
+/* Estilos para la tipografía en dispositivos pequeños */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    main {
+        padding: 2rem;
+        display: block;
+    }
+
+    .section-container {
+        display: block;
+    }
+
+    section {
+        min-width: 100%;
+        margin-right: 0;
+    }
+}
+
+/* Estilos para botones */
+button {
+    background-color: #0077b6;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #005f73;
+}
+
+#IdentificacionMercadosChartSection {
+    padding: 20px;
+    text-align: center;
+}
+
+#IdentificacionMercadosChart {
+    max-width: 100%;
+    height: 400px;
+    margin-top: 20px;
+}
+
+/* Media Query para móviles (pantallas pequeñas) */
+@media (max-width: 768px) {
+    /* Hacer que el contenido se muestre de manera vertical */
+    main {
+        flex-direction: column; /* Cambiar a columna */
+        padding: 10px;
+    }
+
+    section {
+        flex-basis: 100%; /* Cada sección ocupa el 100% del ancho */
+        margin-bottom: 15px; /* Un poco de margen entre secciones */
+    }
+
+    /* Mostrar la barra de navegación en móviles */
+    nav {
+        display: block; /* Mostrar navbar en móviles */
+        position: static; /* Establecer posición normal */
+        width: 100%; /* Ancho completo */
+    }
+
+    /* Ajustar tamaño de texto para móviles */
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    #mercado {
+        width: 90%;  /* Ajusta el ancho de la sección al 90% */
+        margin: 0 auto;  /* Centra la sección */
+    }
+    #marketChart {
+        height: 500px;  /* Ajusta la altura del canvas */
+        width: 100%;  /* Asegura que el ancho sea 100% del contenedor */
+    }
+
+    /* Sección de identificación de mercados */
+    #IdentificacionMercadosChartSection {
+        width: 90%;  /* Reduce el ancho de la sección al 90% */
+        margin: 0 auto;  /* Centra la sección */
+    }
+    #IdentificacionMercadosChart {
+        height: 500px;  /* Ajusta la altura del canvas */
+        width: 100%;  /* Asegura que el ancho sea 100% del contenedor */
+    }
+}
+
+/* Estilo combinado con subrayado animado y elegante */
+.styled-list {
+    list-style: none; /* Elimina los puntos */
+    padding: 0;
+    margin: 0;
+}
+
+.styled-list li {
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    padding: 12px;
+    margin: 10px 0;
+    background-color: #f9f9f9; /* Fondo suave */
+    border-left: 4px solid #4CAF50; /* Barra a la izquierda */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave */
+}
+
+.styled-list li a {
+    text-decoration: none;
+    color: #333; /* Color de texto oscuro */
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 4px;
+    transition: color 0.3s ease; /* Transición suave para el color */
+}
+
+.styled-list li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #4CAF50; /* Color de subrayado */
+    transform: scaleX(0);
+    transition: transform 0.3s ease; /* Transición suave para el subrayado */
+}
+
+/* Efecto hover para el li */
+.styled-list li:hover {
+    background-color: #e7f7e7; /* Fondo al pasar el cursor */
+    transform: translateX(10px); /* Efecto de desplazamiento */
+}
+
+/* Efecto hover para el enlace */
+.styled-list li a:hover {
+    color: #007BFF; /* Cambio de color al pasar el cursor */
+}
+
+.styled-list li a:hover::after {
+    transform: scaleX(1); /* Efecto de subrayado al pasar el cursor */
+}
+/* Estilo común para todas las secciones */
+section {
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 40px 60px;
+    max-width: 950px;
+    margin: 10px auto;
+    border-radius: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    font-size: 28px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+section ul li {
+    padding: 20px;
+    margin-bottom: 16px;
+    font-size: 16px;
+    line-height: 1.7;
+    background-color: #fafafa;
+    border-left: 5px solid #fca311;
+    transition: background-color 0.3s ease-in-out;
+    text-align: justify;
+    border-radius: 2px;
+}
+
+section ul li:hover {
+    background-color: #f0f8ff;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border-left: 5px solid #0077b6;
+}
+
+section ul li strong {
+    color: #14213d;
+    font-weight: bold;
+}
+
+/* Estilo para la sección específica: Requisitos Legales */
+#requisitos-legales {
+    border-left: 6px solid #3498db; /* Línea vertical azul */
+}
+
+#requisitos-legales li::before {
+    content: '🔑'; /* Icono de cada elemento */
+    margin-right: 10px;
+    font-size: 1.2rem;
+    color: #28a745;
+}
+
+/* Estilo para la sección Mercados Internacionales */
+#mercados-internacionales {
+    border-left: 6px solid #3498db; /* Línea vertical azul */
+}
+
+/* Estilo para la sección Documentación */
+#documentacion {
+    border-left: 6px solid #3498db; /* Línea vertical azul */
+}
+
+/* Estilo para la sección Embalaje */
+#embalaje {
+    border-left: 6px solid #3498db; /* Línea vertical azul */
+}
+
+/* Estilo para la sección Impuestos y Aranceles */
+#impuestos {
+    border-left: 6px solid #3498db; /* Línea vertical azul */
+}
+
+/* Estilo para la sección Transporte */
+#transporte {
+    border-left: 6px solid #3498db; /* Línea vertical azul */
+}
+
+/* Estilo para la sección Distribución */
+#distribucion {
+    border-left: 6px solid #3498db; /* Línea vertical azul */
+}
+
+/* Estilo para la sección Comportamiento del Mercado */
+#mercado {
+    border-left: 6px solid #3498db; /* Línea vertical azul */
+}
+
+/* Estilo para la sección Directorio de Términos */
+#terminos {
+    border-left: 6px solid #3498db; /* Línea vertical azul */
+}
+
+/* Estilo para la sección Embalaje y Etiquetado */
+#embalaje {
+    border-left: 6px solid #3498db; /* Línea vertical azul */
+}
+
+/* Fondo y estilo base de la sección */
+#introduccion {
+    background-color: #f5f5f5;
+    padding: 40px 60px;
+    border-radius: 15px;
+    max-width: 900px;
+    margin: 50px auto;
+    color: #333;
+    font-family: 'Georgia', serif;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards;
+}
+
+/* Animación de desvanecimiento */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Título con fuente de estilo vintage y borde inferior */
+#introduccion h2 {
+    font-size: 2.5rem;
+    color: #3e4a89;
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    border-bottom: 3px solid #3e4a89;
+    padding-bottom: 10px;
+}
+
+/* Párrafos con letra clásica y aire sofisticado */
+#introduccion p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.8;
+    text-align: justify;
+    font-family: 'Times New Roman', serif;
+    opacity: 0;
+    animation: textAppear 2s ease-out forwards;
+}
+
+* {
+    font-family: 'Times New Roman', serif;
+    animation: textAppear 2s ease-out forwards;
+}
+
+/* Animación para los párrafos */
+@keyframes textAppear {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Estilos responsivos para pantallas pequeñas */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    header {
+        padding: 1.5rem 0;
+        margin-bottom: 1rem;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+        letter-spacing: 0.5px;
+    }
+
+    h2 {
+        font-size: 1rem;
+        margin: 0.5rem 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    nav ul li a {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+
+    /* Ocultar enlaces específicos en móviles */
+    nav ul li[data-section="mercado"],
+    nav ul li[data-section="IdentificacionMercadosChartSection"] {
+        display: none;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    section {
+        padding: 20px;
+        border-radius: 20px;
+        margin: 10px auto; /* Mayor espacio entre secciones */
+        width: 90%; /* Ajuste responsivo */
+        max-width: 800px; /* Límite máximo para pantallas más grandes */
+    }
+
+    section h2 {
+        font-size: 1rem;
+    }
+
+    /* Ajuste de botones */
+    button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+}
+
+/* Estilos para dispositivos medianos */
+@media (max-width: 1024px) {
+    body {
+        font-size: 16px;
+    }
+
+    nav ul li a {
+        padding: 10px 15px;
+    }
+
+    /* Ocultar enlaces específicos en pantallas medianas */
+    nav ul li[data-section="mercado"],
+    nav ul li[data-section="IdentificacionMercadosChartSection"] {
+        display: none;
+    }
+
+    section {
+        padding: 30px;
+        border-radius: 25px;
+        margin: 15px auto; /* Espaciado adicional entre secciones */
+        width: 95%; /* Asegura que las secciones se adapten */
+        max-width: 100%; /* Ajuste límite para pantallas medianas */
+    }
+
+}
